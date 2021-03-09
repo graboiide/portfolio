@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "@symfony/stimulus-bridge": "^2.0.2",
+    "@symfony/webpack-encore": "^1.1.2",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "stimulus": "^2.0.0",
+    "webpack-notifier": "^1.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:.public/css/style.css",
+    "dev": "encore dev",
+    "build": "encore production",
+    "dev-server": "encore dev-server"
+  },
+  "author": "",
+  "license": "ISC"
+}
