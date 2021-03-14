@@ -1,0 +1,19 @@
+$primary-color : #fcd08a;
+$font-color: #777777;
+$color-h1: #505050;
+$nav-height : 90px;
+
+
+
+@mixin icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: darken($primary-color,15);
+
+  border: 2px solid white;
+  box-shadow: 0 0 6px -2px rgb(114, 114, 114);
+  transition: 500ms;
+  position: absolute;
+}
