@@ -17,12 +17,27 @@ h2{
   color: $font-color;
   border-bottom: 1px solid $primary-color;
   font-weight: bold;
+  margin-top: 40px !important;
+  margin-bottom: 50px !important;
+  font-size: 37px;
 }
 .tag{
   background-color: white;
   border-radius: 25px;
   box-shadow: 0 0 6px -2px rgb(114, 114, 114);
   padding: 3px;
+  margin-top: 11px !important;
+  min-width: 200px;
+  &--big{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: 550ms;
+    &:hover{
+      transform: scale(1.5);
+      transition: 550ms;
+    }
+
+  }
   &__icon{
     margin-left: 4px;
     color: darken($primary-color,15);

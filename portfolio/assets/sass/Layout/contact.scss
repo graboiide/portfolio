@@ -1,0 +1,66 @@
+.section-contact{
+  color: lighten($font-color,10);
+  &__line-contact{
+    margin-bottom: 30px;
+    i{
+      width: 40px;
+      color: $primary-color;
+      margin-right: 8px;
+      font-size: 27px;
+    }
+    div:first-child{
+      color: lighten($font-color,10);
+
+    }
+    span:first-child{
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+  input,textarea{
+    width: 100%;
+    border: 0;
+    margin-top: 10px;
+    box-shadow: 0 0 6px -2px rgb(114, 114, 114);
+    border-radius: 0 5px 5px 0;
+    padding-left: 10px;
+    &::placeholder{
+      color: lighten($font-color,10) !important;
+    }
+  }
+  input{
+    height: 50px;
+
+  }
+  button{
+    background-color: $secondary-color;
+    color: white;
+    padding: 8px;
+    box-shadow: 0 0 6px -2px rgb(114, 114, 114);
+    border: 0;
+    transition: 500ms;
+    &:hover{
+      background-color: $primary-color;
+      box-shadow: 0 0 2px -2px rgb(114, 114, 114);
+      transition: 500ms;
+    }
+
+  }
+
+  &__icon-input{
+    width: 50px;
+    height: 51px;
+    background-color: $secondary-color;
+    font-size: 27px;
+    border-radius: 5px 0 0 5px;
+    box-shadow: 0 0 6px -2px rgb(114, 114, 114);
+    color: white;
+    &--textarea{
+      position: relative;
+      top: 9px;
+      height: 275px;
+    }
+
+  }
+
+}

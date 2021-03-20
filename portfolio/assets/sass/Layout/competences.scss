@@ -1,0 +1,43 @@
+.section-competence{
+  margin-top: 50px;
+  &__description{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    span{
+      display: block;
+    }
+
+  }
+  &__body {
+    margin-top: 25px;
+  }
+  &__icone{
+    @include icon;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  &__title{
+    font-weight: bold;
+    color: $font-color;
+  }
+  &__gauge{
+    height: 20px;
+    background: linear-gradient(to right,darken($primary-color,15), $primary-color);
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: white;
+    &-background{
+      background-color: white;
+      padding: 2px;
+      box-shadow: 0 0 6px -2px rgb(114, 114, 114);
+      border-radius: 0 10px 10px 0;
+      margin-left: 25px;
+      margin-top: 13px;
+    }
+  }
+}

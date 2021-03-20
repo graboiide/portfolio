@@ -1,0 +1,25 @@
+.section-portfolio{
+  border-top: 2px solid whitesmoke;
+  padding-top: 90px !important;
+  .row:first-child{
+    background-color: #fbfbfb;
+  }
+}
+
+.project-card{
+  &__title{
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    color: $secondary-color;
+  }
+  &__image{
+    height: 220px;
+    background-position: center !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+  }
+  &__description{
+    color: lighten($font-color,10) !important;
+  }
+}
