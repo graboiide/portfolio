@@ -1,0 +1,37 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <form action="{{ path('login_check') }}" method="post" class="section-contact offset-3 col-6">
+                <h1 class="mt-5">Connexion</h1>
+                <div class=" d-flex align-items-center">
+                    <div class="section-contact__icon-input d-flex justify-content-center align-items-center">
+                        <i class="far fa-envelope"></i>
+                    </div>
+                    <label for="nom" class="d-inline w-100">
+                        <input type="text" id="email" placeholder="Email" name="_username">
+                    </label>
+                </div>
+                <div class=" d-flex align-items-center">
+                    <div class="section-contact__icon-input d-flex justify-content-center align-items-center">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <label for="nom" class="d-inline w-100">
+                        <input type="text" id="email" placeholder="Mot de passe" name="_password">
+                    </label>
+                </div>
+                <div class="text-right">
+                    <button  type="submit" class="mt-3"><i class="far fa-user-circle"></i> Me connecter</button>
+                </div>
+
+
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}
