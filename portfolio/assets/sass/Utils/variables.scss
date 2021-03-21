@@ -18,3 +18,8 @@ $nav-height : 90px;
   transition: 500ms;
   position: absolute;
 }
+
+$breakpoints: (
+        medium: 768px,
+        small: 576px
+);

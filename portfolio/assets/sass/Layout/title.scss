@@ -5,16 +5,25 @@
   background-color: #1d1d1d;color: white;
   background-attachment: fixed;
   min-height: 160px;
+
   h2{
     color: $primary-color;
     border-bottom: 1px solid $primary-color;
     text-shadow: 1px 0 3px rgb(0 0 0);
+    @media screen and (max-width: map-get($breakpoints,medium)) {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 0 !important;
+    }
   }
   &--h1{
+
     text-shadow: 1px 0 3px rgb(0 0 0);
     color: $color-h1;
     font-size: 43px;
     font-weight: bolder;
+
+
   }
   &--h2{
 

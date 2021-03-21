@@ -12,12 +12,31 @@
       border-bottom: 1px solid $primary-color;
       color: $primary-color;
 
-
-
   }
   }
 
 
+}
+#menu{
+  @media screen and (max-width: map-get($breakpoints,medium)) {
+    position: absolute;
+    top: 100px;
+    background-color: #fffffff7;
+    padding: 5px;
+    left:0;
+    .nav__link{
+      margin-top: 10px;
+      border-bottom: 1px solid $secondary-color;
+
+    }
+    .nav__link:first-child{
+      margin-top: 0;
+    }
+    .nav__link:first-letter{
+      border-bottom: 4px solid $secondary-color;
+    }
+
+  }
 }
 header{
   overflow: hidden;
@@ -42,7 +61,18 @@ header{
     position: relative;
     top: 17px
   }
+  span{
+    @media screen and (max-width: map-get($breakpoints,medium)) {
+      font-size: 22px;
+      text-align: center;
+    }
+  }
+
   h1{
     border-bottom: 1px solid $primary-color;
+    @media screen and (max-width: map-get($breakpoints,medium)) {
+      font-size: 28px;
+      text-align: center;
+    }
   }
 }
