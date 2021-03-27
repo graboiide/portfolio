@@ -1,5 +1,6 @@
 .service-info{
   margin-top: 30px;
+
   color: $font-color;
   padding: 17px 0;
   border-bottom: 1px solid white ;
@@ -37,6 +38,7 @@
   background-color: whitesmoke;
   padding-top: 1px;
   padding-bottom: 50px;
+  overflow: hidden;
   &__description{
     margin-bottom: 30px;
     color: $font-color;
