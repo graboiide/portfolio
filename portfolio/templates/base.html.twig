@@ -60,9 +60,15 @@
 
 
     </section>
+
+
+
     {% include "front/include/_services.html.twig" %}
     {% include "front/include/_competences.html.twig" %}
-    {% include "front/include/_portfolio.html.twig" %}
+    {% block body %}
+
+    {% endblock %}
+
     {% include "front/include/_contact.html.twig" %}
     {% block javascript %}
     {% endblock %}
@@ -74,7 +80,51 @@
 
 
         window.addEventListener("DOMContentLoaded", (event) => {
-            document.getElementById('title-head').style.left = '1000px';
+
+            document.getElementById('call-menu').addEventListener('click',function (e){
+                e.preventDefault();
+                e.stopPropagation();
+                const menu = document.getElementById(this.dataset.target);
+                menu.classList.toggle('d-none');
+
+            })
+            document.querySelector('body').addEventListener('click',() =>{
+                hiddenMenu();
+            })
+
+            function hiddenMenu(){
+                const menu = document.getElementById("menu");
+                if(!menu.classList.contains('d-none')){
+                    menu.classList.toggle('d-none');
+                }
+            }
+
+
+
+            let anchors = document.querySelectorAll('.smooth-scroll');
+
+            for (i=0 ; i < anchors.length ; i++){
+                anchors[i].addEventListener('click',function (e){
+                    e.preventDefault();
+                    const menu = document.getElementById("menu");
+                    hiddenMenu();
+                    smoothScroll(document.querySelector(this.dataset.anchor));
+                })
+            }
+
+
+
+            function smoothScroll(anchor){
+                const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
+                anime({
+                    targets:scrollElement,
+                    scrollTop: anchor.getBoundingClientRect().top + pageYOffset -90 ,
+                    duration: 900,
+                    easing: 'easeInOutQuad'
+                })
+            }
+
+            //document.getElementById('title-head').style.left = '1000px';
             document.getElementById('title-head').style.opacity = 0;
             const service = document.getElementById('service');
             let elms = document.querySelectorAll('.inViewPort');
@@ -190,6 +240,8 @@
             let xRandom = Math.random()*100;
             let yRandom = Math.random()*100;
 
+
+
             let background = anime({
                 targets:'#background',
                 backgroundPositionX:xRandom+"%",
@@ -236,9 +288,10 @@
 
             let animation = anime({
                 targets: '.bloc-title',
-                left:0,
+
                 opacity:1,
-                duration:3000
+                duration:3000,
+                easing:'linear'
 
             });
             animation.play()

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProjectController!{% endblock %}
+
+{% block body %}
+    <section class="container-fluid section-portfolio">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <h2 class=" text-uppercase my-3 col-12 mt-5" style="border-bottom: 1px solid #fcd08a">Mon portfolio</h2>
+
+                    {% for project in projects %}
+                        <div class="col-lg-4 col-12">
+                            <div class="project-card mt-5">
+                                <div class="project-card__body">
+
+                                    <div class="project-card__image" style="background: url({{ project.cover }})">
+
+                                    </div>
+                                    <div class="project-card__title mt-3">
+                                        {{ project.title }}
+                                    </div>
+                                    <div class="project-card__description">
+                                        - {{ project.caption }}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </section>
+{% endblock %}
