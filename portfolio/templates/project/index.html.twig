@@ -15,7 +15,10 @@
                                 <div class="project-card__body">
 
                                     <div class="project-card__image" style="background: url({{ project.cover }})">
-
+                                        {% if is_granted('ROLE_ADMIN') %}
+                                            <a href="{{ path('admin_project',{'id':project.id}) }}" style="display: inline-block;position: relative;top: -20px"><i class="far fa-edit"></i></a>
+                                            <a href="{{ path('admin_delete_project',{'id':project.id}) }}" style="display: inline-block;position: relative;top: -20px" class="ml-3"><i class="fas fa-trash-alt"></i></a>
+                                        {% endif %}
                                     </div>
                                     <div class="project-card__title mt-3">
                                         {{ project.title }}
@@ -29,10 +32,10 @@
                         </div>
                     {% endfor %}
 
-
-
                 </div>
-
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a class="mt-5 d-inline-block" href="{{ path('admin_project') }}">AJOUTER UN PROJET</a>
+                {% endif %}
 
             </div>
         </div>

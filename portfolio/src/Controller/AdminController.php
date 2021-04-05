@@ -7,6 +7,7 @@ use App\Entity\Project;
 use App\Entity\Tech;
 use App\Form\ProjectType;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,14 +27,17 @@ class AdminController extends AbstractController
 
     /**
      *@Route ("/admin/delete/project/{id}" , name="admin_delete_project")
+     *@IsGranted("ROLE_ADMIN")
      */
     public function deleteProject(Project $project, EntityManagerInterface $manager){
         $manager->remove($project);
+        $manager->flush();
         return $this->redirectToRoute("index");
     }
 
     /**
      * @Route("/admin/project/{id}", name="admin_project",defaults={"id"=null})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function project(Request $request,EntityManagerInterface $em,Project $project = null): Response
     {

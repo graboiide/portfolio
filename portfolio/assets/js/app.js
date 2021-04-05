@@ -5,6 +5,7 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 
- require('animejs');
+require('./menu');
+require('./smooth-scroll');
 
-
+require('./animations');
