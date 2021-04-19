@@ -22,7 +22,7 @@ security:
                 check_path: login_check
             logout:
                 path: logout
-                target: home
+                target: index
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

@@ -1,4 +1,4 @@
-<section class="section-contact mt-5">
+<section class="section-contact my-5">
     <div class="container">
         <div class="row">
             <h2 class="text-uppercase  col-12 " style="border-bottom: 1px solid #fcd08a">Me contacter</h2>
@@ -46,14 +46,14 @@
                         })();</script><a href="https://1map.com/fr/map-embed">1 Map</a></div>
             </div>
 
-            <form class="col-lg-8 col-12 mt-5 mt-lg-0" action="" method="post">
+            <form id="form-mail" class="col-lg-8 col-12 mt-5 mt-lg-0" action="" method="post">
 
                 <div class=" d-flex align-items-center">
                     <div class="section-contact__icon-input d-flex justify-content-center align-items-center">
                         <i class="far fa-id-badge"></i>
                     </div>
                     <label for="nom" class="d-inline w-100">
-                        <input type="text" id="nom" placeholder="Votre nom et prénom">
+                        <input name="name" type="text" id="nom" placeholder="Votre nom et prénom">
                     </label>
                 </div>
 
@@ -62,7 +62,7 @@
                         <i class="far fa-envelope"></i>
                     </div>
                     <label for="nom" class="d-inline w-100">
-                        <input type="text" id="email" placeholder="Votre email">
+                        <input name="email" type="text" id="email" placeholder="Votre email">
                     </label>
                 </div>
                 <div class=" d-flex align-items-center">
@@ -70,7 +70,7 @@
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <label for="nom" class="d-inline w-100">
-                        <input type="text" id="phone" placeholder="Votre téléphone ( facultatif )">
+                        <input name="phone" type="text" id="phone" placeholder="Votre téléphone ( facultatif )">
                     </label>
                 </div>
                 <div class=" d-flex ">
@@ -78,16 +78,25 @@
                         <i class="far fa-edit"></i>
                     </div>
                     <label for="nom" class="d-inline w-100">
-                        <textarea name="text" id="content" cols="30" rows="10" placeholder="Votre demande" class="position-relative"></textarea>
+                        <textarea name="description" id="content" cols="30" rows="10" placeholder="Votre demande" class="position-relative"></textarea>
                     </label>
                 </div>
                 <div class="w-100 text-right">
-                    <button  type="submit" class=""><i class="far fa-paper-plane"></i> Envoyer</button>
+                    <button id="send-mail" type="submit" class=""><i class="far fa-paper-plane"></i> Envoyer</button>
                 </div>
 
 
 
             </form>
+            <div id="mail-message" class="col-lg-8 col-12 mt-5 mt-lg-0 text-center" style="display: none">
+                <i class="d-block far fa-grin fa-4x mt-5"></i>
+                <p class="mt-5">
+                    Votre message à bien été envoyé, je vous répondrez dans un délai maximum de 24h, en vous remerciant.
+                </p>
+
+                <button id="reload" type="submit" class=""><i class="far fa-paper-plane"></i> Envoyer un autre message</button>
+            </div>
+
         </div>
     </div>
 

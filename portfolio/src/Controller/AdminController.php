@@ -77,4 +77,12 @@ class AdminController extends AbstractController
         ]);
     }
 
+    /**
+     *@Route ("/admin/mail",name="Admin_mail")
+     */
+    public function mail(Request $request)
+    {
+        return new Response('OK');
+    }
+
 }

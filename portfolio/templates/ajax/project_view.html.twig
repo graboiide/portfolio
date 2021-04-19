@@ -1,0 +1,75 @@
+
+{% block body %}
+
+        <div class="row">
+            <div class="container">
+                <div class="row" >
+
+
+                    <div class="col-12">
+                        <h1 class="m-5 text-center">{{ project.title }}</h1>
+                        <div class="project-view__close" >
+                            <i class="fas fa-times fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <img src="{{ project.cover }}" alt="{{ project.title }}" class="img-fluid mt-5">
+                    </div>
+                    <div class="col-lg-6 col-12 pl-5 project-view__info">
+                        <h2 class="mt-5">Informations</h2>
+                        {% for techno in project.technologies %}
+                            <div class="project-view__tech d-inline-block ">
+                                <i class="{{ techno.icon }}"></i> <span>{{ techno.name }}</span>
+                            </div>
+                        {% endfor %}
+
+
+                        <div class="mt-3">
+                            <i class="fas fa-link"></i>
+                            {% if project.url is not null %}
+                                <a href="{{ project.url }}">{{ project.url }}</a>
+                            {% else %}
+                                pas de lien disponible
+                            {% endif %}
+                        </div>
+                        <div><i class="fas fa-calendar-day mt-2"></i> {{ project.date|date('d-m-Y') }}</div>
+
+
+                    </div>
+                    <div class="col-12 project-view__descr mt-5 px-5">
+                        {{ project.description }}
+                    </div>
+                    <div class="col-12 mt-5" >
+
+                        <div id="my-carousel" class="row overflow-hidden" style="background-color: #4db7c7;">
+                            <div class="col-12">
+                                {% for picture in project.pictures  %}
+                                    <div  data-index="{{ loop.index0 }}"
+                                         class="my-carousel__item flex-column justify-content-end {% if loop.index0 != 0 %} d-none {% else %} d-flex{% endif %}"
+
+                                         style="background-image: url({{ picture.url }});
+
+
+                                            ">
+
+                                        <div class="p-3 d-none d-md-block mb-2" style="background-color: #2d2d2d87;color: white;border-radius: 8px">
+                                            {{ picture.description }}
+                                        </div>
+                                    </div>
+                                {% else %}
+                                {% endfor %}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+{% endblock %}

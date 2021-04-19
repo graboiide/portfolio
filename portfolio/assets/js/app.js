@@ -7,5 +7,5 @@
 
 require('./menu');
 require('./smooth-scroll');
-
+require('./projects');
 require('./animations');

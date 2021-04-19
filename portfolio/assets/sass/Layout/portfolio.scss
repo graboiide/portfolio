@@ -23,3 +23,64 @@
     color: lighten($font-color,10) !important;
   }
 }
+#project-view{
+  height: 100vh;
+  background-color: #fffffffa;
+  position: fixed;
+  overflow-y: auto;
+  padding-top: $nav-height;
+  padding-bottom: 50px;
+  z-index: 1000;
+  top: $nav-height;
+  display: none;
+  h1{
+    color: $secondary-color;
+    text-transform: uppercase;
+  }
+  h2{
+    margin-bottom: 9px;
+  }
+  .project-view{
+    a{
+      color: $secondary-color!important;
+
+    }
+    &__descr{
+      &:first-letter{
+        font-size: 30px;
+        font-weight: bold;
+      }
+      color: $font-color;
+      border-left: 3px solid $primary-color;
+    }
+    &__tech{
+      background-color: darken($secondary-color,20) ;
+      color: white;
+      padding: 5px;
+      border-radius: 3px;
+      margin-top: 3px;
+    }
+    &__info{
+      color: $font-color;
+      border-left: 2px solid whitesmoke;
+    }
+    &__close{
+      position: absolute;
+      z-index: 1001;
+      top: 5px;
+      right: 0;
+      color: lighten($font-color,40);
+
+    }
+  }
+
+}
+.my-carousel{
+  &__item{
+    background-size: contain;
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+}
